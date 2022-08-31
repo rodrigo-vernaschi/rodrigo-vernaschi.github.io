@@ -14,7 +14,8 @@ body {
 }
 
 html {
-    height: 100vh;
+    min-height: 100%;
+    min-height: 100vh;
 }
 
 .container {
@@ -26,8 +27,8 @@ html {
 .card {
     display: flex;
     max-width: 30rem;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .card-header {
