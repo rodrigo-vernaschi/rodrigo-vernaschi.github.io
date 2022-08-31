@@ -69,7 +69,7 @@ const saveTodo = (text, done = 0, save = 1) => {
     todoInput.value = ""
 
     // focando de volta ao campo de adicionar tarefa
-    // todoInput.focus()
+    todoInput.focus()
 }
 
 // exibir/ocultar forms
