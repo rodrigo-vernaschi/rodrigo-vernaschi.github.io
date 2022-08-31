@@ -68,6 +68,7 @@ body {
     font-size: 1.2em;
     background-color: #dbdbdb;
     cursor: pointer;
+    color: #000;
 }
 
 #buttons-container .number {
@@ -86,4 +87,10 @@ body {
 
 #buttons-container #equal-btn:hover {
     background-color: #3a91d8;
+}
+
+@media (max-width: 400px) {
+    body {
+        padding: 1em;
+    }
 }
