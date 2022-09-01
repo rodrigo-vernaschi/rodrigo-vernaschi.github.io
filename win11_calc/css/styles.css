@@ -52,7 +52,7 @@ body {
 
 #operations {
     text-align: right;
-    height: 100px;
+    min-height: 100px;
     padding-bottom: 10px;
 }
 
