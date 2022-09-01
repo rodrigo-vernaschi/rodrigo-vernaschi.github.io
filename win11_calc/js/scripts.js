@@ -153,6 +153,8 @@ buttons.forEach((btn) => {
     })
 })
 
+
+// capturar as teclas do teclado
 window.addEventListener("keydown", (e) => {
     const value = e.key
 
