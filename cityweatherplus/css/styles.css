@@ -158,7 +158,7 @@ p {
 .minMax-container img {
     margin-bottom: -1.5em;
     margin-right: -2em;
-    margin-left: -2em;
+    margin-left: -0.1em;
 }
 
 #minMax img {
