@@ -1,6 +1,7 @@
 // variáveis e seleção de eventos
 const apiKey = "c24784a00335f3c62723286a4d90acd9";
 const apiCountryURL = "https://countryflagsapi.com/png/";
+const apiUnsplash = "https://source.unsplash.com/1280x720/?";
 
 const cityInput = document.querySelector("#city-input");
 const searchBtn = document.querySelector("#search");
@@ -20,22 +21,37 @@ const weatherContainer = document.querySelector("#weather-data");
 
 const errorMessageContainer = document.querySelector("#error-message");
 
+const loader = document.querySelector("#loader");
+
+const backgroundImgBg = document.querySelector("#bg");
+const backgroundImgDiv = document.querySelector("#background-img");
+
 // funções
+const toggleLoader = () => {
+    loader.classList.toggle("hide");
+};
+
 const showCurrentLocation = async (lat, lon) => {
+    hideInformation();
+    toggleLoader();
     const currentPos = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&lang=pt_br`;
 
     const res = await fetch(currentPos);
     const data = await res.json();
 
     showWeatherData(data.name);
+    toggleLoader();
 };
 
 const getWeatherData = async (city) => {
+    hideInformation();
+    toggleLoader();
     const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=pt_br`;
 
     const res = await fetch(apiWeatherURL);
     const data = await res.json();
 
+    toggleLoader();
     return data;
 };
 
@@ -49,8 +65,6 @@ const hideInformation = () => {
 };
 
 const showWeatherData = async (city) => {
-    hideInformation();
-
     const data = await getWeatherData(city);
 
     if (data.cod === "404") {
@@ -67,6 +81,14 @@ const showWeatherData = async (city) => {
     windElement.innerText = `${data.wind.speed}km/h`;
     minTemp.innerText = parseInt(data.main.temp_min);
     maxTemp.innerText = parseInt(data.main.temp_max);
+
+    // mudar imagem de fundo
+    if (window.screen.width >= 600) {
+        backgroundImgBg.setAttribute("src", `${apiUnsplash + city}`);
+        backgroundImgDiv.classList.remove("hide");
+    } else {
+        backgroundImgDiv.classList.add("hide");
+    }
 
     weatherContainer.classList.remove("hide");
 };

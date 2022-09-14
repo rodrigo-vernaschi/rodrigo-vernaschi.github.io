@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     font-family: "Ubuntu", sans-serif;
+    max-width: 100%;
 }
 
 body {
@@ -11,9 +12,29 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    max-width: 100%;
 }
 
 /* geral */
+
+#background-img {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+#background-img img {
+    min-height: 100%;
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
 
 .container {
     display: flex;
@@ -26,8 +47,8 @@ body {
 }
 
 #main-card {
-    background-color: #5c54ed;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #5c54edf8;
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 3px 8px;
     padding: 1.5rem;
     color: #fdfdfd;
     border-radius: 1rem;
@@ -54,6 +75,13 @@ body {
 #weather-data,
 #error-message {
     border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    text-align: center;
+    padding-top: 0.5rem;
+    margin-bottom: 0.7rem;
+}
+
+#loader {
     text-align: center;
     padding-top: 0.5rem;
     margin-bottom: 0.7rem;
@@ -102,6 +130,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 1rem;
 }
 
 #details-container img {
@@ -144,7 +173,7 @@ span.minMax-temp {
 
 #details-container #humidity {
     border-right: 1px solid #fff;
-    margin: 0.6rem;
+    margin: 0.2rem;
     padding: 0.6rem;
 }
 
@@ -161,15 +190,28 @@ span.minMax-temp {
 }
 
 .card-footer {
+    border: 0 !important;
     padding-top: 1.5rem;
     background-color: transparent;
-    border-top: 1px solid #fdfdfd;
     color: #8dd0f5;
 }
 
 .card-footer i {
     font-size: 2rem;
     padding-right: 10px;
+}
+
+/* loader */
+#loader img {
+    margin-bottom: -1rem;
+    height: 5rem;
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(180deg);
+    }
 }
 
 @media (max-width: 576px) {

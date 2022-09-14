@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <meta charset="UTF-8" />
         <meta
@@ -65,6 +65,7 @@
         />
     </head>
     <body>
+        <div id="background-img"><img id="bg"><img></div>
         <div class="container text-center d-flex align-items-center min-vh-100">
             <div
                 id="main-card"
@@ -89,7 +90,7 @@
                         </div>
                         <button
                             id="currentPosition-btn"
-                            class="btn btn-light"
+                            class="btn btn-primary"
                         >
                             Localização Atual
                         </button>
@@ -156,6 +157,16 @@
                     class="hide"
                 >
                     <p>Não foi possível encontrar o clima de uma cidade com este nome.</p>
+                </div>
+
+                <!-- Loader -->
+                <div id="loader" class="hide">
+                    <img
+                        src="img/icons/snowflake.svg"
+                        alt="carregando"
+                    />
+                    <br>
+                    <label>carregando...</label>
                 </div>
 
                 <!-- footer -->
