@@ -114,14 +114,15 @@ currentPositionBtn.addEventListener("click", (e) => {
 });
 
 cityInput.addEventListener("keydown", (e) => {
-    if (e.code === "Enter") {
-        const city = e.target.value;
+    if (e.code === "Enter" || e.keyCode === 13) {
+        let city = e.target.value;
+        city = city.replace(/(^\s+|\s+$)/g, ""); // retira espaços em branco ao final da string
 
         showWeatherData(city);
     }
 });
 
-window.addEventListener("load", (e) => {
+window.addEventListener("load", () => {
     navigator.geolocation.getCurrentPosition((position) => {
         const lat = position.coords.latitude;
         const long = position.coords.longitude;
