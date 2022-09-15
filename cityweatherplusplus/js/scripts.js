@@ -42,7 +42,7 @@ const getCurrentPos = () => {
 
 const getWeatherData = async (lat, lon) => {
 
-    const url = `https://api.hgbrasil.com/weather?key=ee910e29&array_limit=4&lat=${lat}&lon=${lon}&user_ip=remote&format=json-cors`;
+    const url = `https://api.hgbrasil.com/weather?key=9801512a&array_limit=4&lat=${lat}&lon=${lon}&user_ip=remote&format=json-cors`;
     const res = await fetch(url);
     const data = await res.json();
 
