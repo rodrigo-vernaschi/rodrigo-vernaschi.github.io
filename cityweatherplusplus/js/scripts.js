@@ -1,5 +1,6 @@
 const apiUnsplash = "https://source.unsplash.com/1366x768/?";
 const apiIcon = "https://assets.hgbrasil.com/weather/images/";
+let urlK = ""
 
 const loader = document.querySelector("#loader");
 const container = document.querySelector("#container");
@@ -29,20 +30,33 @@ const showBgImage = async (city) => {
     weatherBG.style.backgroundSize = "cover";
 };
 
-const getCurrentPos = () => {
+
+const getCurrentIp = async () => {
+    const currentUrl = window.location.href
+
+    if(currentUrl.includes("127.0.0.1") || currentUrl.includes("192.168.0")) {
+        urlK = "ee910e29"
+    } else {
+        urlK = "9801512a"
+    }
+
+    getWeatherData(urlK)
+}
+
+const getCurrentPos = (urlK) => {
     navigator.geolocation.getCurrentPosition(getCurrentLoc)
 
     function getCurrentLoc(position) {
         const lat = position.coords.latitude
         const lon = position.coords.longitude
 
-        getWeatherData(lat, lon)
+        getWeatherData(lat, lon, urlK)
     }
 }
 
 const getWeatherData = async (lat, lon) => {
 
-    const url = `https://api.hgbrasil.com/weather?key=9801512a&array_limit=4&lat=${lat}&lon=${lon}&user_ip=remote&format=json-cors`;
+    const url = `https://api.hgbrasil.com/weather?key=${urlK}&array_limit=4&lat=${lat}&lon=${lon}&user_ip=remote&format=json-cors`;
     const res = await fetch(url);
     const data = await res.json();
 
@@ -81,7 +95,6 @@ const getDay = async (day, element) => {
 
 const showWeatherData = async (city) => {
     hideInformation();
-    const data = await city;
 
     function addZero(i) {
         if (i < 10) {
@@ -91,13 +104,16 @@ const showWeatherData = async (city) => {
         return i;
     }
 
+    const data = await city;
     const date = new Date();
     let day = date.getDay()
     let hours = addZero(date.getHours());
     let minutes = addZero(date.getMinutes());
     let fullTime = `${hours}:${minutes}`;
-
-    weatherIconElement.setAttribute("src", apiIcon + data.results.img_id + ".png");
+    let originalCurrentWeatherIconName = data.results.condition_slug
+    currentWeatherIconName = originalCurrentWeatherIconName.replace(/_/g, '-')
+    
+    weatherIconElement.setAttribute("src", "img/icons/" + currentWeatherIconName + ".svg");
     cityElement.innerText = data.results.city;
     dateElement.innerText = `${data.results.date} / ${fullTime}`;
 
@@ -127,7 +143,7 @@ const showWeatherData = async (city) => {
 
         const div = document.querySelector(".forecast-info");
         const originalIconName = data.results.forecast[i].condition
-        const iconName = originalIconName.replace(/_/g, '-')
+        iconName = originalIconName.replace(/_/g, '-')
 
         let cardDiv = document.createElement("div");
         let cardTextDiv = document.createElement("div");
@@ -172,7 +188,7 @@ const showWeatherData = async (city) => {
 
 // eventos
 window.addEventListener("load", () => {
-    getCurrentPos()
+    getCurrentIp()
 });
 
 // ano atual (footer)

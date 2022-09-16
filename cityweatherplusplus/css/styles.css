@@ -33,16 +33,13 @@ body {
 }
 
 #header-city-info img {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    height: 5em;
-    width: auto;
+    
 }
 
 #header-city-info {
     position: relative;
     padding: 1rem;
+    padding-bottom: 1.2rem;
     flex: 1 100%;
     color: #fff;
     filter: sepia(50%);
@@ -87,6 +84,9 @@ body {
 .temp-number3 {
     font-size: 3em;
 }
+
+
+
 
 
 
@@ -247,8 +247,23 @@ footer i {
 
 /* responsive */
 @media (max-width: 532px) {
+    #header-container {
+        min-height: 290px;
+    }
+
     #header-city-info img {
-        height: 3.5em;
+        position: absolute;
+        right: -1em;
+        bottom: 0;
+        height: 11em;
+        width: auto;
+    }
+
+    #header-temps-info-mobile {
+        display: block;
+        padding-top: 3em;
+        font-size: 1.3em;
+        font-weight: bold;
     }
 
     #city-name-mobile {
@@ -293,10 +308,6 @@ footer i {
         align-items: center;
         justify-content: center;
         padding-right: 1em;
-    }
-
-    #header-temps-info-mobile {
-        display: block;
     }
 
     #header-temps-info-full {
