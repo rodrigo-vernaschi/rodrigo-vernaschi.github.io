@@ -1,0 +1,286 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000;
+}
+
+h1.projects-h1 {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-size: 4em;
+}
+
+h1.socials-h1 {
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+    font-size: 4em;
+}
+
+p {
+    position: relative;
+}
+
+a,
+a:hover,
+a:link
+a:visited,
+a:active {
+    text-decoration: none;
+}
+
+@keyframes bg-pulse {
+    0% {opacity: 0.005; rotate: 0deg;}
+    50% {opacity: 0.02; rotate: 5deg;}
+    0% {opacity: 0.005; rotate: 0deg;}
+}
+
+
+/* COLORS */
+i {
+    color: #ee4758;
+}
+
+.color-aliceblue {
+    color: aliceblue;
+}
+
+p.card-text,
+h2.about-h2,
+p.about-p {
+    color: rgb(33, 37, 33);
+}
+
+h5.card-title {
+    color: #000;
+}
+
+.footer,
+.footer i,
+.footer a {
+    color: #000;
+}
+
+.linear-main-bg {
+    background-image: linear-gradient(25deg, #d64c7f, #ee4758 50%);
+}
+
+.white-bg {
+    background-color: #fff;
+}
+
+#javascript-icon {
+    color: #EFD81D;
+}
+
+#react-icon {
+    color: #92DEF4;
+}
+
+#nodejs-icon {
+    color: #8CBF3D;
+}
+
+#css-icon {
+    color: #026DB5;
+}
+
+#html5-icon {
+    color: #E96228;
+}
+
+
+/* CLASSES */
+.navbar {
+    opacity: 0.97;
+    
+}
+
+.featured-icons {
+    padding: 0 0.7rem 0 0.7rem;
+    font-size: 3em;
+}
+
+.rounded-bg {
+    border-radius: 15px;
+}
+
+.cards {
+    display: flex;
+    text-align: left;
+    max-width: 18rem;
+    max-height: auto;
+}
+
+.cards img {
+    max-height: 10em;
+    max-width: 10em;
+    margin: 0 auto;
+}
+
+.projects-links {
+    margin: 1em;
+}
+
+.height-5em {
+    height: 5em;
+}
+
+.skill-icon-card {
+    width: 6em;
+    height: 6em;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+i.skill-icon {
+    font-size: 3.8em;
+}
+
+.col-align-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+}
+
+.skill-icon-card.html5 {
+    width: 13em;
+}
+
+.socials-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-socials {
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    width: 10em;
+    margin: 1em;
+}
+
+.card-img-socials {
+    position: relative;
+    font-size: 5em;
+}
+
+.card-img-socials::before {
+    position: absolute;
+    top: 10px;
+}
+
+h5.card-footer {
+    padding-top: 10px;
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    margin-top: 5em;
+    padding-bottom: 5em;
+    font-weight: bold;
+}
+
+.footer.card-body {
+    margin: 0;
+    padding: 0;
+}
+
+.footer i {
+    padding-left: 4px;
+    font-size: 2em;
+}
+
+
+/* IDS */
+#header-container {
+    height: 60vh;
+}
+
+#header-container::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url("../img/content-bg.jpg");
+    background-size: cover;
+    opacity: 0.005;
+
+    animation-name: bg-pulse;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    transition: ease-in-out;
+}
+
+#header-container-text-col {
+    height: 60vh;
+}
+
+#header-row-container {
+    padding: 0;
+    margin: 0;
+}
+
+#header-row-featured-icons {
+    background-color: transparent;
+}
+
+#header-container-featured-icons {
+    max-width: 140px;
+}
+
+#content-container {
+    position: relative;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0px -6px 20px 20px rgba(0,0,0,0.1);
+    height: auto;
+}
+
+#content-container::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url("../img/content-bg.jpg");
+    background-size: cover;
+    opacity: 0.01;
+}
+
+#projects-container {
+    position: relative;
+}
+
+#projects-cards-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+#skills-about-container {
+    padding-top: 5em;
+}
+
+#skills-about-row{
+    align-items: center;
+}
+
+#about {
+    text-align: left;
+}
+
+#skills,
+#about {
+    max-width: 300px;
+}
