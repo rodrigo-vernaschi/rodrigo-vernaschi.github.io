@@ -1,0 +1,155 @@
+/* Geral */
+
+/* reset */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* definições do body */
+body {
+    background-image: url(../img/bg2.jpg);
+    background-position: center;
+    background-size: auto;
+}
+
+html {
+    min-height: 100%;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    max-width: 30rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card-header {
+    font-size: 2rem;
+}
+
+#plus-logo {
+    color: #0d6efd;
+}
+
+#todo-form .card-body,
+#edit-form .card-body,
+#pesquisar .card-body,
+#pesquisar form {
+    display: flex;
+}
+
+#todo-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+#filter-container {
+    max-width: 120px;
+}
+
+.dropdown-item {
+    cursor: pointer;
+}
+
+.hide {
+    transition: 1s;
+    display: none !important;
+}
+
+#todo-list {
+    padding: 10px;
+}
+
+.card>.list-group {
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+.todo.list-group-item {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.todo.list-group-item.done {
+    background-color: #0d6efd;
+}
+
+.todo.list-group-item.done h3 {
+    color: #fff;
+    text-decoration: line-through;
+}
+
+.todo h3 {  
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    flex: 1;
+    font-size: 1.2rem;
+}
+
+
+.vr {
+    padding: 0 !important;
+    margin-top: 10px !important;
+}
+
+/* estilização dos ícones dos botões */
+#todo-list button i {
+    display: flex;
+    font-size: 1.5rem;
+    pointer-events: none;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.rounded {
+    margin-left: 0.2rem;
+    padding: .2em;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    border: 2px solid;
+    background-color: #fff;
+    color: #0d6efd;
+}
+
+#toolbar .form-label,
+.dropdown {
+    display: flex;
+}
+
+#themes {
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+#dark-btn,
+#light-btn {
+    padding: 1px 9px 2px 8px;
+}
+
+.card-footer i {
+    font-size: 2rem;
+    padding-left: 10px;
+}
+
+button i {
+    pointer-events: none;
+}
