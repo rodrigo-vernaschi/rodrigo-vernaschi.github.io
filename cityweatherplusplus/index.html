@@ -53,15 +53,13 @@
         ></script>
     </head>
     <body>
-        <div id="loader" class="hidde">
+        <div id="loader" class="hide">
             <div id="loading">
                 <span id="loading-icon"><img src="img/icons/snowflake.svg" id="loading-icon"></span><span id="loading-text">Carregando...</span>
             </div>
         </div>
-        <div
-            id="container"
-            class="hide"
-        >
+        <div id="container" class="hide">
+            <img id="arrow" src="img/icons/pressure-low.svg">
             <div id="header-container">
                 <div id="header-city-info">
                     <div id="header-city-info-container">
@@ -69,14 +67,11 @@
                         <h2 id="day"></h2>
                         <h2 id="city"></h2>
                         <h3 id="date"></h3>
+                        <img id="header-icon" class="icon" />
                         <div id="header-temps-info-mobile">
                             Atual: <span id="temp"></span>C&deg; / Min:
                             <span id="forecast-min"></span>C&deg; / Max:
                             <span id="forecast-max"></span>C&deg;
-                            <img
-                                id="header-icon"
-                                class="icon"
-                            />
                         </div>
                     </div>
                     <div id="header-temps-info-container">
@@ -118,6 +113,8 @@
                     <div id="footer-text">
                         © <span id="year"></span> - Copyright:
                         <a href="/">Rodrigo Vernaschi</a>
+                        / Animated Icons:
+                        <a href="https://bas.dev/work/meteocons">basmilius</a>
                     </div>
                 </div>
             </footer>

@@ -105,6 +105,7 @@ const showWeatherData = async (city) => {
     }
 
     const data = await city;
+    const forecastElements = data.results.forecast;
     const date = new Date();
     let day = date.getDay()
     let hours = addZero(date.getHours());
@@ -118,8 +119,6 @@ const showWeatherData = async (city) => {
     dateElement.innerText = `${data.results.date} / ${fullTime}`;
 
     getDay(day, dayElement)
-
-    const forecastElements = data.results.forecast;
 
     for(let i = 0; i < tempElement.length; i++) {
         tempElement[i].innerText = data.results.temp;
@@ -143,6 +142,7 @@ const showWeatherData = async (city) => {
 
         const div = document.querySelector(".forecast-info");
         const originalIconName = data.results.forecast[i].condition
+        const cardDescription = data.results.forecast[i].description
         iconName = originalIconName.replace(/_/g, '-')
 
         let cardDiv = document.createElement("div");
@@ -150,9 +150,10 @@ const showWeatherData = async (city) => {
         let cardIconDiv = document.createElement("div");
         let cardIcon = document.createElement("img");
         let pDate = document.createElement("p");
+        let pDayOfWeek = document.createElement("p")
         let pMinTemp = document.createElement("p");
         let pMaxTemp = document.createElement("p");
-        let pDayOfWeek = document.createElement("p")
+        let pCardDescription = document.createElement("p")
 
         cardDiv.classList.add("forecast-card");
         cardTextDiv.classList.add("card-text");
@@ -161,20 +162,26 @@ const showWeatherData = async (city) => {
         pDayOfWeek.classList.add("forecast-day")
         pMinTemp.classList.add("forecast-minDate");
         pMaxTemp.classList.add("forecast-maxDate");
+        pCardDescription.classList.add("card-temp-description")
         cardIcon.classList.add("card-icon");
 
         div.appendChild(cardDiv);
+
         cardDiv.appendChild(cardTextDiv);
         cardDiv.appendChild(cardIconDiv);
+
         cardTextDiv.appendChild(pDate);
         cardTextDiv.appendChild(pDayOfWeek);
         cardTextDiv.appendChild(pMinTemp);
         cardTextDiv.appendChild(pMaxTemp);
+        cardTextDiv.appendChild(pCardDescription);
+        
         cardIconDiv.appendChild(cardIcon);
 
         pDate.innerHTML = `<span>${forecastElements[i].date}</span>`;
         pMinTemp.innerHTML = `<span class="card-temps-text">Min: </span><span class="card-temp">${forecastElements[i].min} C&deg;</span>`;
         pMaxTemp.innerHTML = `<span class="card-temps-text">Max: </span><span class="card-temp">${forecastElements[i].max} C&deg;</span>`;
+        pCardDescription.innerText = `${cardDescription}`;
         cardIcon.setAttribute("src", "img/icons/" + iconName + ".svg");
 
         getDay(day, pDayOfWeek)
