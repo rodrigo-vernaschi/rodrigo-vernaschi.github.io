@@ -67,8 +67,8 @@ body {
     display: block;
     position: absolute;
     left: 11em;
-    bottom: -2em;
-    height: 11em;
+    bottom: -0.7em;
+    height: 7.7em;
     width: auto;
 }
 
@@ -200,7 +200,6 @@ span.card-temp {
 #arrow {
     display: none;
 }
-
 
 
 
@@ -388,9 +387,9 @@ footer i {
 
     #header-city-info img.icon {
         position: absolute;
-        left: 15em;
-        bottom: 1em;
-        height: 18em;
+        left: 17em;
+        bottom: 1.5em;
+        height: 16em;
         width: auto;
     }
 
@@ -411,8 +410,8 @@ footer i {
     #header-city-info img.icon {
         position: absolute;
         left: 11em;
-        bottom: 1em;
-        height: 14em;
+        bottom: 3em;
+        height: 11em;
         width: auto;
     }
 
@@ -497,8 +496,8 @@ footer i {
     #header-city-info img.icon {
         position: absolute;
         left: 10em;
-        bottom: 2.2em;
-        height: 14em;
+        bottom: 4em;
+        height: 11.7em;
         width: auto;
     }
 }
@@ -506,9 +505,9 @@ footer i {
 @media (max-width: 280px) {
     #header-city-info img.icon {
         position: absolute;
-        left: 9em !important;
+        left: 10.5em !important;
         bottom: 7em !important;
-        height: 9em !important;
+        height: 7.5em !important;
         width: auto;
     }
 

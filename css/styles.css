@@ -1,9 +1,6 @@
 html {
     scroll-behavior: smooth;
-}
-
-body {
-    background-color: #000;
+    overflow-x: hidden;
 }
 
 h1.projects-h1 {
@@ -38,7 +35,16 @@ a:active {
 
 
 /* COLORS */
-i {
+body {
+    background-color: #000;
+}
+
+a#logo {
+    background-color: #ee4758;
+    color: #fff;
+}
+
+.rounded-bg i {
     color: #ee4758;
 }
 
@@ -54,6 +60,12 @@ p.about-p {
 
 h5.card-title {
     color: #000;
+}
+
+.bi-calendar-plus::before {
+    position: absolute;
+    padding: 0;
+    margin: 0;
 }
 
 .footer,
@@ -90,6 +102,22 @@ h5.card-title {
     color: #E96228;
 }
 
+#about-resume-icon {
+    color: #8CBF3D;
+}
+
+#about-linkedin-icon {
+    color: #0A66C2;
+}
+
+#about-github-icon {
+    color: #000;
+}
+
+#about-instagram-icon {
+    color: #D9189B;
+}
+
 
 /* CLASSES */
 .navbar {
@@ -117,6 +145,12 @@ h5.card-title {
     max-height: 10em;
     max-width: 10em;
     margin: 0 auto;
+}
+
+.card-img-top.win11-calc-icon {
+    margin-top: 20px;
+    height: 140px;
+    width: auto;
 }
 
 .projects-links {
@@ -196,6 +230,12 @@ h5.card-footer {
 
 
 /* IDS */
+a#logo {
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+    border-radius: 10px;
+}
+
 #header-container {
     height: 60vh;
 }
@@ -228,6 +268,7 @@ h5.card-footer {
 
 #header-row-featured-icons {
     background-color: transparent;
+    z-index: 1000;
 }
 
 #header-container-featured-icons {
@@ -283,4 +324,65 @@ h5.card-footer {
 #skills,
 #about {
     max-width: 300px;
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 415px) {
+    #header-row-container {
+        flex-direction: column;
+        align-content: flex-start;
+        height: 60vh;
+    }
+
+    #header-container-text-col {
+        width: 400px;
+        height: 100px;
+    }
+
+    #header-row-featured-icons {
+        flex-direction: row !important;
+        width: 400px;
+        height: 30vh;
+    }
+
+    #about {
+        margin: 0 auto;
+    }
+
+    #skills-about-container {
+        padding-top: 3em;
+    }
+
+    #skills-about-row {
+        flex-direction: column-reverse;
+    }
+
+    h2.about-h2 {
+        text-align: center;
+        font-size: 3em;
+    }
+
+    #skills {
+        justify-content: center !important;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    h1.socials-h1 {
+        font-size: 3em;
+    }
+
+    .card-socials {
+        width: 10em;
+        margin: 0.1em;
+    }
+}
+
+@media (max-width: 281px) {
+
+    h1.socials-h1 {
+        font-size: 2em;
+    }
 }
